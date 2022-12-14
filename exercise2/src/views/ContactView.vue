@@ -1,4 +1,34 @@
-<template>
+<template lang="en">
+  <div>
+    <form class="d-grid w-50 mx-auto gap-2">
+        <label for="fullname">Fullname</label>
+        <input type="text" placeholder="Fullname..." v-model="fullname">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email..." v-model="email">
+        <label for="age">Age</label>
+        <input type="number" placeholder="Age..." v-model="age">
+        <label for="dob">DOB</label>
+        <input type="date" placeholder="DOB..." v-model="dob">
+        <input type="submit" class="w-25 mx-auto mb-5" id="submit" placeholder="Submit" v-on:click.prevent="submit">
+    </form> 
+  </div>
+</template>
+<script>
+export default {
+  methods: {
+    submit() {
+      alert(`${this.fullname} with the email ${this.email} at age ${this.age} was born on ${this.dob}`)
+    }
+  },
+}
+</script>
+
+<style scoped>
+
+</style>
+
+
+<!-- <template>
   <div class="contact">
     <h1>Send us a message:</h1>
   </div>
@@ -33,26 +63,7 @@
 </template>
 
 <style scoped>
-</style>
+</style> -->
 
-<!-- <template>
-  <div>
-    <ContactForm v-on:submit="handleFormSubmit" />
-  </div>
-</template>
 
-<script>
-import ContactForm from './ContactForm.vue'
-
-export default {
-  components: {
-    ContactForm
-  },
-  methods: {
-    handleFormSubmit (data) {
-      // Handle form submission...
-    }
-  }
-}
-</script> -->
   
